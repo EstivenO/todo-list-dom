@@ -1,11 +1,25 @@
+
+// ==========================
+// Selección de elementos DOM
+// ==========================
+
 const input = document.querySelector("#inputTarea");
 const btnAgregar = document.querySelector("#btnAgregar");
 const listaTareas = document.querySelector("#listaTareas");
 const mensaje = document.querySelector("#mensaje");
 
+
+// ==========================
+// Estado de la aplicación
+// ==========================
 const tareas = [];
 
+
+// ==========================
+// Carga inicial desde localStorage
+// ==========================
 const tareasGuardadas = localStorage.getItem("tareas");
+
 if( tareasGuardadas === null ) {
   
 }else{
@@ -16,6 +30,10 @@ if( tareasGuardadas === null ) {
     }
 };
 
+
+// ==========================
+// Evento: agregar tarea
+// ==========================
 btnAgregar.addEventListener("click", () => {
 
     const texto = input.value.trim();
@@ -40,6 +58,31 @@ btnAgregar.addEventListener("click", () => {
     
     input.value = "";
 });
+
+
+// ==========================
+// Funciones
+// ==========================
+
+function crearYMostrarTarea(tarea){
+    const item = document.createElement("li");
+    item.textContent = tarea.texto;
+    item.classList.add("tasks__item");
+    listaTareas.appendChild(item);
+    actividadRealizada(item,tarea.texto);
+    botonEliminar(item,tarea);
+
+    if(tarea.completado){
+        item.classList.toggle("tasks__list--completed");   
+    }
+    
+}
+
+function saveTasks(tareas,texto){
+    let tarea = {texto: texto, completed:false};
+    tareas.push(tarea);
+    localStorage.setItem("tareas",JSON.stringify(tareas));
+}
 
 function botonEliminar(item, tarea){
     const btnEliminar = document.createElement("button");
@@ -80,24 +123,4 @@ function actividadRealizada (actividad,texto){
         localStorage.setItem("tareas", JSON.stringify(tareasGuardadas));
         actividad.classList.toggle("tasks__list--completed");
     });
-}
-
-function saveTasks(tareas,texto){
-    let tarea = {texto: texto, completed:false};
-    tareas.push(tarea);
-    localStorage.setItem("tareas",JSON.stringify(tareas));
-}
-
-function crearYMostrarTarea(tarea){
-    const item = document.createElement("li");
-    item.textContent = tarea.texto;
-    item.classList.add("tasks__item");
-    listaTareas.appendChild(item);
-    actividadRealizada(item,tarea.texto);
-    botonEliminar(item,tarea);
-
-    if(tarea.completado){
-        item.classList.toggle("tasks__list--completed");   
-    }
-    
 }

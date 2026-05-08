@@ -90,7 +90,7 @@ function saveTasks(tareas,texto){
 
 function crearYMostrarTarea(tarea){
     const item = document.createElement("li");
-    item.textContent = `* ${tarea.texto}`;
+    item.textContent = tarea.texto;
     item.classList.add("tasks__item");
     listaTareas.appendChild(item);
     actividadRealizada(item,tarea.texto);

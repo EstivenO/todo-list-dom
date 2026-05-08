@@ -116,7 +116,7 @@ body {
 }
 
 .tasks__list--completed {
-    background-color: aquamarine;
+    background-color: #d0fdd7;
     text-decoration: line-through;
 }
 

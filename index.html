@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Todo list -- Estiven Ortiz</title>
+</head>
+<body>
+    <header class="header">
+    
+        <div class="container">
+            
+            <h1 class="header__title">Lista de tareas</h1>
+            <p class="header__content">Este proyecto simula una lista de tareas para practicar manipulación del DOM.</p>
+            <img class="header__img" src="img/tarea.png" alt="imagen de logo">
+
+        </div>
+               
+    </header>
+    <main>
+        
+        <div class="container">
+            
+            <section class="form">
+                
+                <form action="">
+                    <fieldset class="form__fieldset">
+                        <legend>Ingreso de Actividades</legend>
+                        <label class="form__label" for="inputTarea">Actividad y/o Tarea:</label>
+                        <input class="form__input" type="text" name="inputTarea" id="inputTarea" placeholder="Ingresa la Actividad y/o Tarea">
+
+                        <button class="form__button" id="btnAgregar" type="button">Agregar</button>
+                    </fieldset>
+                </form>
+
+            </section>
+
+            <section class="tasks">
+
+                <h2 class="tasks__title">Listado de tareas ingresado</h2>
+                <ul class="tasks__list" id="listaTareas">
+
+                </ul>
+                <p class="tasks__msj" id="mensaje"></p>
+
+            </section>
+            
+        </div>
+
+    </main>
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>Estiven Ortiz Z.</p>
+
+        </div>
+
+    </footer>
+</body>
+</html>

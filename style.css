@@ -11,6 +11,7 @@
     --color-bg: #f4f4f4;
     --color-texto: #333;
     --color-primary: #2ecc71;
+    --color-completed: #009688;
     /*espaciado*/
     --spacing-sm: 10px;
     --spacing-md: 16px;
@@ -116,7 +117,7 @@ body {
 }
 
 .tasks__list--completed {
-    background-color: #d0fdd7;
+    background-color: var(--color-completed);
     text-decoration: line-through;
 }
 

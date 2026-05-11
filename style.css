@@ -119,6 +119,7 @@ body {
 .tasks__list--completed {
     background-color: var(--color-completed);
     text-decoration: line-through;
+    color:white
 }
 
 .tasks__button-delete {

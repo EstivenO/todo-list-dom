@@ -78,11 +78,11 @@ function crearYMostrarTarea(tarea){
     
 }
 
-function saveTasks(tareas,texto){
-    let tarea = {texto: texto, completed:false};
-    tareas.push(tarea);
-    localStorage.setItem("tareas",JSON.stringify(tareas));
-}
+// function saveTasks(tareas,texto){
+//     let tarea = {texto: texto, completed:false};
+//     tareas.push(tarea);
+//     localStorage.setItem("tareas",JSON.stringify(tareas));
+// }
 
 function botonEliminar(item, tarea){
     const btnEliminar = document.createElement("button");
